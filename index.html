@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <title>Hello World!</title>
+</head>
+<body>
+<h1>Hello World!</h1>
+We are using Node.js <span id="node-version"></span>,
+Chromium <span id="chrome-version"></span>,
+and Electron <span id="electron-version"></span>.
+<input type="text" id="a">
+<input type="text" id="b">
+<button id="saveFile">保存文件</button>
+<button id="saveButton">保存</button>
+<button id="readButton">读取</button>
+</body>
+<script>
+    const startButton = document.getElementById('saveButton');
+
+    startButton.addEventListener('click', () => {
+        console.info("11111", 11111)
+        console.info("document.getElementById('a').value", document.getElementById('a').value)
+        window.electronAPI.saveKey(document.getElementById('a').value);
+    });
+    const saveFileButton = document.getElementById('saveFile');
+
+    saveFileButton.addEventListener('click', () => {
+        console.info("11111", 11111)
+        console.info("document.getElementById('a').value", document.getElementById('a').value)
+        window.electronAPI.saveFile(document.getElementById('b').value);
+    });
+    const readButton = document.getElementById('readButton');
+
+    readButton.addEventListener('click',async () => {
+        console.info("11111", 11111)
+        console.info("document.getElementById('a').value",await window.electronAPI.readFile())
+    });
+</script>
+</html>
