@@ -1,0 +1,5 @@
+provider: github
+owner: nbshree
+repo: electron-test
+token:
+updaterCacheDirName: electron-test

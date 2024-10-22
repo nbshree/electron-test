@@ -1,16 +1,25 @@
 {
   "name": "my-electron-app",
-  "version": "1.0.0",
+  "version": "2.0.6",
   "description": "Hello World!",
   "main": "main.js",
   "author": "Jane Doe",
   "license": "MIT",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder"
+    "build": "electron-builder",
+    "release": "electron-builder build --publish always"
   },
   "build": {
     "appId": "com.example.myapp",
+    "publish": {
+      "provider": "github",
+      "token": "",
+      "owner": "nbshree",
+      "updaterCacheDirName": "electron-test",
+      "repo": "electron-test",
+      "releaseType": "release"
+    },
     "win": {
       "target": [
         {
@@ -33,6 +42,8 @@
     "electron-builder": "^25.1.8"
   },
   "dependencies": {
-    "@nut-tree/nut-js": "^4.2.0"
+    "@nut-tree/nut-js": "^4.2.0",
+    "electron-log": "^5.2.0",
+    "electron-updater": "^6.3.9"
   }
 }

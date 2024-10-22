@@ -15,6 +15,7 @@ and Electron <span id="electron-version"></span>.
 <button id="saveFile">保存文件</button>
 <button id="saveButton">保存</button>
 <button id="readButton">读取</button>
+<button id="checkForUpdate">检查更新</button>
 </body>
 <script>
     const startButton = document.getElementById('saveButton');
@@ -36,6 +37,11 @@ and Electron <span id="electron-version"></span>.
     readButton.addEventListener('click',async () => {
         console.info("11111", 11111)
         console.info("document.getElementById('a').value",await window.electronAPI.readFile())
+    });
+    const checkForUpdate = document.getElementById('checkForUpdate');
+
+    checkForUpdate.addEventListener('click',async () => {
+        window.electronAPI.checkForUpdate();
     });
 </script>
 </html>
